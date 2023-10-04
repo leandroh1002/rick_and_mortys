@@ -1,0 +1,17 @@
+.divcardsdetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    
+}
+.divheader{
+    border-radius: 5px;
+}
+.div{
+    width: 360px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}

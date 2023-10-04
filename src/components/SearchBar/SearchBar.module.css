@@ -1,0 +1,26 @@
+.container{
+   /* background-color: #7373d7; */
+   margin:auto;   
+   display: flex;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   justify-content: center;
+   align-items: flex-end;}
+
+
+   .container input{
+border-radius: 20px 0px 0px 20px; 
+  border: none;
+  height: 25px;
+  padding-left: 10px;}
+
+  .container button{
+    margin-top: 5px;
+   border-radius: 0px 20px 20px 0px;
+   border: 1px #000000;
+   font-family: 'Roboto', sans-serif;
+   font-size: large;
+   font-weight: bold;
+   width: 90px;
+   height: 25px;
+}

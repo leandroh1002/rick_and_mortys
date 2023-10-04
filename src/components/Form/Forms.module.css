@@ -1,0 +1,46 @@
+.divcontainer{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divform{
+    background-image: url(../../assets/rick.jpg);
+    /*object-fit: contain;*/
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 280px;
+    color: aliceblue;
+    /*background-color: slategrey;*/
+    border-radius: 20px 0px 0px 20px;
+    background-position: right;
+    
+}
+.mostrarpass{
+    display: flex;
+}
+.seconddesign{
+    /*background-color: aquamarine;*/
+    width: 180px;
+    height: 280px;    
+}
+.imglogin{
+    width: 180px;
+    height: 280px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    /*align-items: flex-start;*/
+}
+
+.divbtn{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
