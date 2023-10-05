@@ -25,14 +25,13 @@ function Detail() {
       <div >
          <img className={styles.divheader} src={character.image} />
       </div>
+
       <div className={styles.div}>
          <h1>{character.name}</h1>
-         <>
          <h2>Status: {character.status}</h2>
          <h2>Especie: {character.species}</h2>
          <h2>Genero: {character.gender}</h2>
-         <h2>{character.origin && character.origin.name && (<h2>Origen: {character.origin.name}</h2>)}</h2>
-         </>
+         <h2>{character.origin && character.origin.name && (<>Origen: {character.origin.name}</>)}</h2>
       </div>
    </div>
   )
