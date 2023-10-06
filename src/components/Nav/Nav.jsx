@@ -13,7 +13,7 @@ export default function Nav(props) {
       <Link to={PATHROUTES.HOME}><button className={styles.btn}>Home</button></Link>
       <Link to={PATHROUTES.FAVORITES}><button className={styles.btn}>Favorites</button></Link>
       </div>
-      <SearchBar onSearch={onSearch} />
+      {location.pathname !== "/about" && <SearchBar onSearch={onSearch} /> }
     </div>
   )
 } 
