@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import validate from '../../Functions/validation';
 import styles from "./Forms.module.css";
 import urlImage from '../../assets/morty.jpg';
+import eye from '../../assets/eye.png';
+import show from '../../assets/show.png';
 
 
 
@@ -40,24 +42,29 @@ function Forms(props) {
       <div className={styles.divform}>
         <form className={styles.form} onSubmit={handleSubmit} action="">
           <label htmlFor="email">Email</label>
-            <input type="text" name='email' value={userData.email} onChange={handleChange}/>
+            <input className={styles.ipt} type="text" name='email' value={userData.email} onChange={handleChange}/>
             
-            {errors.email &&  <p>{errors.email}</p>}
+            {errors.email &&  <p className={styles.prf1}>{errors.email}</p>}
             <label htmlFor="password">Password</label>
             <div className={styles.mostrarpass}>
             <input
+                
                 type={showPassword ? 'text' : 'password'}
                 name='password'
                 value={userData.password}
                 onChange={handleChange}
               />
             {/* <input type="text" name='password' value={userData.password} onChange={handleChange}/> */}
-            <button type="button" onClick={togglePasswordVisibility}> {showPassword ? 'O' : 'M'}</button>
+            <button className={styles.btnpass} type="button" onClick={togglePasswordVisibility}> {showPassword ? (
+                <img className={styles.imgs} src={show} alt="Show Password" />
+              ) : (
+                <img className={styles.imgs} src={eye} alt="Hide Password" />
+              )}</button>
           </div>
-          {errors.password &&  <p>{errors.password}</p>}
+          {errors.password &&  <p className={styles.prf2}>{errors.password}</p>}
           
           <div className={styles.divbtn}>
-          <button>SUBMIT</button>
+          <button className={styles.btn}>SUBMIT</button>
 
 
           </div>
