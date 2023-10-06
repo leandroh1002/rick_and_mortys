@@ -3,11 +3,9 @@
   /* margin: 0 auto; */
   /* padding: 2rem; */
   /* text-align: center; */
-  background-image: url(./assets/background.jpg);
-  background-size: cover;
-  max-width: 100%;
-}
 
+}
+  /*
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -43,8 +41,13 @@
 .read-the-docs {
   color: #888;
 }
-
+*/
 body{
   max-width: 100%;
   margin: 0;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url(./assets/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }

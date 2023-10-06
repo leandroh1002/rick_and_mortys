@@ -8,10 +8,12 @@ export default function Nav(props) {
   const {onSearch} = props;
   return (
     <div>
-        <button className={styles.btn}><Link to={PATHROUTES.ABOUT}>About</Link></button>
-        <button className={styles.btn}><Link to={PATHROUTES.HOME}>Home</Link></button>
-        <button className={styles.btn}><Link to={PATHROUTES.FAVORITES}>Favorites</Link></button>
-        <SearchBar onSearch={onSearch} />
+      <div className={styles.divbtn}>
+      <Link to={PATHROUTES.ABOUT}><button className={styles.btn}>About</button></Link>
+      <Link to={PATHROUTES.HOME}><button className={styles.btn}>Home</button></Link>
+      <Link to={PATHROUTES.FAVORITES}><button className={styles.btn}>Favorites</button></Link>
+      </div>
+      <SearchBar onSearch={onSearch} />
     </div>
-  );
+  )
 } 

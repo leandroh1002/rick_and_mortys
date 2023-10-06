@@ -4,6 +4,11 @@ import styles from "./Card.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react"; 
 import PATHROUTES from "../../helpers/PathRoutes.helper";
+import alive from "../../assets/latido.png"
+import dead from "../../assets/calavera.png"
+import unknown from "../../assets/desconocido.png"
+
+
 
 
 
@@ -26,35 +31,56 @@ function Card(props) {
     setIsFav(!isFav)
   }
 
+  let statusImage;
+
+  switch (status) {
+    case "Alive":
+      statusImage = <img className={styles.statusImage} src={alive} alt="Alive" />;
+      break;
+    case "Dead":
+      statusImage = <img className={styles.statusImage} src={dead} alt="Dead" />;
+      break;
+    case "unknown":
+      statusImage = <img className={styles.statusImage} src={unknown} alt="Unknown" />;
+      break;
+    default:
+      statusImage = null;
+      break;
+  }
+
   return (
-    <div className={styles.cardContainer}>
+    <div>
+      <div className={styles.cardContainer}>
+
       <div className={styles.header}>
-      {
-      isFav ? (
-      <button onClick={handleFavorite}>❤️</button>
-      ) : (
-      <button onClick={handleFavorite}>🤍</button>
-      )
-      }
-        <img className={styles.imgperfil} src={image} alt={name} />
+      <Link to={`/detail/${id}`}><img className={styles.imgperfil} src={image} alt={name} /></Link>
+          <div className={styles.divfav}>
+            {isFav ? (
+              <button className={styles.divfav} onClick={handleFavorite}>❤️</button>
+              ) : (
+                <button className={styles.divfav} onClick={handleFavorite}>🤍</button>)}
+          </div>
       </div>
 
       <div >
         <div className={styles.contenedorNombreEstado}/* className={name ? styles.name : styles.noname} */>
-          <Link to={`/detail/${id}`}><h2>{name}</h2></Link>
-          <h2>{status}</h2>
+          <h2>{name}</h2>
+          {/*<h2>{status}</h2>*/}{statusImage}
         </div>
         <div className={styles.containerh2}>
           <h2>{species}</h2>
           <h2>{gender}</h2>
           {/* <h2>{origin}</h2> */}
         </div>
+        
       </div>
+
+      </div>
+      <div className={styles.containerTransition}>
         <div className={styles.wrapperButton}>
-          {pathname !== PATHROUTES.FAVORITES && (<button className={styles.close} onClick={() => onClose(id)}>
-            X
-          </button>)}
+          {pathname !== PATHROUTES.FAVORITES && (<button className={styles.close} onClick={() => onClose(id)}>X</button>)}
         </div>
+      </div>
     </div>
   );
 

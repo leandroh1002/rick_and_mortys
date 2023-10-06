@@ -8,7 +8,12 @@
 
 .contenedor{  
     display : flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    /* max-width: 80%; */
-    margin: auto;}
+  flex-wrap: wrap;
+  gap: 10px;
+  /* max-width: 80%; */
+  margin: auto;}
+
+.divfilter{
+    display: flex;
+    justify-content: center;
+}

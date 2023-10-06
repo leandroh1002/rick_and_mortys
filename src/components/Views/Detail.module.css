@@ -1,17 +1,39 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
 .divcardsdetail{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
-    
-}
-.divheader{
+    width: 600px;
+    height: 240px;
+    background-color: white;  
     border-radius: 5px;
 }
+
+.divheader{
+    border-radius: 5px;
+    max-width: 220px;
+    margin-left: 50px;
+}
+
 .div{
     width: 360px;
     display: flex;
     align-items: center;
     flex-direction: column;
 
+}
+.divh1{
+    position: relative;
+    top: -10px;
+}
+.divh2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
 }

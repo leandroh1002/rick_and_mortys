@@ -12,7 +12,6 @@ switch(type){
         let copy1 = state.allCharacters;
         copy1.push(payload)
         return{
-            //...state, myFavorites: copy1
             ...state, myFavorites: copy1, allCharacters: copy1
         }
     case REMOVE_FAV:
@@ -27,17 +26,17 @@ switch(type){
             return genero.gender === payload;
         })
         return {
-            ...state, myFavorites: copy3, allCharacters: copy3
+            ...state, myFavorites: copy3,
         }
     case ORDER:
-        let copy4 = state.allCharacters;
+        let copy4;
         if (payload === "A") {
-            copy4.sort((a, b) => a.id - b.id); // Ordenar de menor a mayor por ID.
+            copy4 = state.allCharacters.sort((a, b) => a.id - b.id); // Ordenar de menor a mayor por ID.
           } else if (payload === "D") {
-            copy4.sort((a, b) => b.id - a.id); // Ordenar de mayor a menor por ID.
+            copy4 = state.allCharacters.sort((a, b) => b.id - a.id); // Ordenar de mayor a menor por ID.
           }
         return{
-            ...state, myFavorites: copy4, allCharacters: copy4
+            ...state, myFavorites: copy4,
         }
 
     default: 
