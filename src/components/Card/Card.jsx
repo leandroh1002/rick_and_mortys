@@ -51,6 +51,9 @@ function Card(props) {
   return (
     <div>
       <div className={styles.cardContainer}>
+        <div className={styles.wrapperButton}>
+          {pathname !== PATHROUTES.FAVORITES && (<button className={styles.close} onClick={() => onClose(id)}>X</button>)}
+        </div>
 
       <div className={styles.header}>
       <Link to={`/detail/${id}`}><img className={styles.imgperfil} src={image} alt={name} /></Link>
@@ -75,11 +78,6 @@ function Card(props) {
         
       </div>
 
-      </div>
-      <div className={styles.containerTransition}>
-        <div className={styles.wrapperButton}>
-          {pathname !== PATHROUTES.FAVORITES && (<button className={styles.close} onClick={() => onClose(id)}>X</button>)}
-        </div>
       </div>
     </div>
   );

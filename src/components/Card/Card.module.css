@@ -1,5 +1,5 @@
 .cardContainer{
-    background-color: transparent; 
+    background-color: white; 
     position: relative;
     margin-top: 68px;
     width:300px;
@@ -17,25 +17,24 @@
     background-color: white;
     width:300px;
     height: 40px;
-    position: relative;
-    z-index: -1;
+    /*position: relative;*/
+    z-index: 1;
     top: -50px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.containerTransition:hover{
-    width: 300px;
-    height: 200px;
 
-}
 
 .cardContainer:hover .close{
     visibility: visible;
 }
 
 .close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
     border-radius: 50%;
     border: none;
     color: white;
@@ -44,7 +43,6 @@
     width: 20px;
     height: 20px;
     align-items: center;
-   
 }
 
 h2{
