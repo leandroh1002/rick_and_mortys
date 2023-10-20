@@ -1,6 +1,7 @@
 const axios = require('axios');
 exports.getCharById = (res, id)=>{
-    axios.get(`http://localhost:3001/rickandmorty/character/${id}`)
+    //axios.get(`http://localhost:3001/rickandmorty/character/${id}`)
+    axios.get(`https://rickandmortyapi.com/api/character/${id}`)
     .then((response)=>{
         const ch = response.data;
 
