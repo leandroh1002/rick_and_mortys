@@ -6,7 +6,7 @@ export const addFav = (character) => {
     return (dispatch) => {
        axios.post(endpoint, character).then(({ data }) => {
           return dispatch({
-             type: 'ADD_FAV',
+             type: ADD_FAV,
              payload: data,
           });
        });
@@ -18,7 +18,7 @@ export const addFav = (character) => {
     return (dispatch) => {
        axios.delete(endpoint).then(({ data }) => {
           return dispatch({
-             type: 'REMOVE_FAV',
+             type: REMOVE_FAV,
              payload: data,
        });
        });
