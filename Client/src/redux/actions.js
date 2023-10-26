@@ -11,7 +11,7 @@ export const addFav = (character) => {
           });
        });
     };
- };r
+ };
 
  export const removeFav = (id) => {
     const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
