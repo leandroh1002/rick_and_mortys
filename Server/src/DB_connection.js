@@ -1,6 +1,8 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
+const FavoriteModel = require ('./models/Favorite')
+const UserModel = require ('./models/User')
 
 // EJERCICIO 03
 // A la instancia de Sequelize le falta la URL de conexión. ¡Agrégala!
@@ -9,23 +11,25 @@ const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
 const sequelize = new Sequelize(
    // URL
-   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/rickandmorty`,
+   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/rickandmorty`, // donde se conecta postgres
    { logging: false, native: false }
 );
 
 // EJERCICIO 05
 // Debajo de este comentario puedes ejecutar la función de los modelos.
-
+FavoriteModel(sequelize);
 //
-
+UserModel(sequelize);
 //
 
 // Ejercicio 06
 // ¡Relaciona tus modelos aquí abajo!
-// const { User, Favorite } = sequelize.models;
+const { User, Favorite } = sequelize.models;
+User.belongsToMany(Favorite, {through : "userFavorite"})
+Favorite.belongsToMany(User, {through : "userFavorite"})
 
 module.exports = {
-   // User,
-   // Favorite,
+   User,
+   Favorite,
    conn: sequelize,
 };
